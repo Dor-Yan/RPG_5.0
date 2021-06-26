@@ -134,6 +134,7 @@ namespace RPG
                     Console.WriteLine("You have a sword!");
 
                     player.EquipedWeapon = blade;
+
                     break;
                 case "2":
                     Console.WriteLine("You have a gun!");

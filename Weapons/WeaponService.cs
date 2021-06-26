@@ -53,8 +53,9 @@ namespace RPG
             public int Range() { return 10; }
         }
 
-        public class Player
+        public class Player 
         {
+            
             public string Height { get; set; }
             public string Hair { get; set; }
             public string Weight { get; set; }
