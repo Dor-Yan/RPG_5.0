@@ -53,16 +53,23 @@ namespace RPG
             public int Range() { return 10; }
         }
 
-        public class Player 
+        public class Player
         {
-            
+            public Player()
+            {
+                EquipedWeapon = new Fist();
+                Xp = new List<int>();
+
+            }
+
+                
             public string Height { get; set; }
             public string Hair { get; set; }
             public string Weight { get; set; }
             public string Name { get; set; }
-            public IWeapon EquipedWeapon { get; set; } 
+            public IWeapon EquipedWeapon { get; set; }
 
-            public List<int> Xp = new List<int>();
+            public List<int> Xp;
         }
 
     }

@@ -9,6 +9,7 @@ namespace RPG
 {
     public class Actions : WeaponService
     {
+
         WeaponService weaponService = new WeaponService();
         public int endPoint = 0;
 

@@ -8,7 +8,7 @@ namespace RPG
         static void Main(string[] args)
         {
             int sumXp = 0;
-            WeaponService.Player player  = new WeaponService.Player();
+            WeaponService.Player player = new WeaponService.Player();
             PlayerService playerService = new PlayerService();
 
             //WeaponService.IWeapon fist = new WeaponService.Fist();
