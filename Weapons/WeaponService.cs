@@ -48,8 +48,8 @@ namespace RPG
             public string Height { get; set; }
             public string Hair { get; set; }
             public string Weight { get; set; }
-            public string Name { get; set; } //Tego u Ciebie nie ma. Podaję imię, a program zapomina.
-            public IWeapon EquipedWeapon { get; set; } // Tego też nie ma
+            public string Name { get; set; } 
+            public IWeapon EquipedWeapon { get; set; } 
 
             public List<int> Xp = new List<int>();
         }
