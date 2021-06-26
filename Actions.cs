@@ -125,7 +125,7 @@ namespace RPG
             Console.WriteLine(fire.WeaponInfo());
             IWeapon booms = new Booms();
             Console.WriteLine(booms.WeaponInfo());
-
+            
             string choose = Console.ReadLine();
 
             switch (choose)

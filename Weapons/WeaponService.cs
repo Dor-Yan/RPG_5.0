@@ -19,6 +19,16 @@ namespace RPG
             int Range();
         }
 
+        public class Fist : IWeapon
+        {
+            public string WeaponInfo() { return "Fist"; }
+            public int Attack() { return 1; }
+            public int Speed() { return 1; }
+            public int Range() { return 1; }
+        }
+
+
+        
         public class Blades : IWeapon
         {
             public string WeaponInfo() {return "1. Sword"; }
@@ -48,7 +58,7 @@ namespace RPG
             public string Height { get; set; }
             public string Hair { get; set; }
             public string Weight { get; set; }
-            public string Name { get; set; } 
+            public string Name { get; set; }
             public IWeapon EquipedWeapon { get; set; } 
 
             public List<int> Xp = new List<int>();

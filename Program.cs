@@ -12,9 +12,7 @@ namespace RPG
             
             PlayerService playerService = new PlayerService();
 
-            
-
-           playerService.intro();
+            playerService.intro();
 
             Actions actions = new Actions();
             WeaponService weaponService = new WeaponService();
