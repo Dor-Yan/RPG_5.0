@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class PlayerService : WeaponService
+    class Intro : Player
     {
-      Player player = new Player();
+        Player player = new Player();
 
-        
-       
         public void intro()
         {
         Console.WriteLine("Welcome in the most archaic RPG in whole world!");

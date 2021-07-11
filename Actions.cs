@@ -3,32 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 
 namespace RPG
 {
     public class Actions : WeaponService
     {
-
-        WeaponService weaponService = new WeaponService();
         public int endPoint = 0;
-
-        Player player = new Player();
-        public void Monster(int result)
+        
+        public void Monster(int result, Player player)
         {
             
             if (result == 1)
             {
-                if (weaponService != null)
-                {
-                    Console.WriteLine("WOW!!!");
-                    Console.WriteLine("You defeated the Monster using your weapon!");
-                    player.Xp.Add(100);
-                    Console.ReadKey();
-                    Console.Clear();
-                }
-
-                else 
+                if (player.EquipedWeapon == null)
                 {
                     Console.WriteLine("Did you really think you would defeat a monster with only one finger?");
                     Console.WriteLine();
@@ -37,6 +26,16 @@ namespace RPG
                     Console.WriteLine("                       |");
                     Console.WriteLine("                     R.I.P.");
                     endPoint += 1;
+                }
+
+                else 
+                {
+                    
+                    Console.WriteLine("WOW!!!");
+                    Console.WriteLine("You defeated the Monster using your weapon!");
+                    player.Xp.Add(100);
+                    Console.ReadKey();
+                    Console.Clear();
                 }
             }
 
@@ -59,12 +58,12 @@ namespace RPG
                 Console.WriteLine("or");
                 Console.WriteLine("2. Run away!");
                 Console.WriteLine();
-                Monster(int.Parse(Console.ReadLine()));
+                Monster(int.Parse(Console.ReadLine()), player);
                 Console.WriteLine();
             }
         }
 
-        public void Wizard(int result)
+        public void Wizard(int result, Player player)
         {
             if (result == 4)
             {
@@ -91,12 +90,12 @@ namespace RPG
                 Console.WriteLine("1. Fight!");
                 Console.WriteLine("2. Run away!");
 
-                Monster(int.Parse(Console.ReadLine()));
+                Monster(int.Parse(Console.ReadLine()), player);
 
             }
         }
 
-        public void Bridge (int result)
+        public void Bridge (int result, Player player)
         {
             int sum = result;
             for (int i = 0; sum <= 1000; i++)
@@ -121,11 +120,11 @@ namespace RPG
             Console.WriteLine("Choose your weapon:");
 
             IWeapon blade = new Blades();
-            Console.WriteLine(blade.WeaponInfo());
+            Console.WriteLine($"1. {blade.WeaponInfo()}");
             IWeapon fire = new Fire();
-            Console.WriteLine(fire.WeaponInfo());
+            Console.WriteLine($"2. {fire.WeaponInfo()}");
             IWeapon booms = new Booms();
-            Console.WriteLine(booms.WeaponInfo());
+            Console.WriteLine($"3. {booms.WeaponInfo()}");
             
             string choose = Console.ReadLine();
 
@@ -151,8 +150,9 @@ namespace RPG
             Console.ReadKey();
         }
 
-        public void Diamond (int star)
+        public void Diamond (int star, Player player)
         {
+            
             if (star < 100 && star%2!=0)
             {
                 int st = 1;
@@ -209,7 +209,7 @@ namespace RPG
                 Console.WriteLine();
                 Console.WriteLine("I said odd!!!");
                 Console.WriteLine();
-                Diamond(int.Parse(Console.ReadLine()));
+                Diamond(int.Parse(Console.ReadLine()), player);
                 
                 Console.Clear();
             }
@@ -224,11 +224,6 @@ namespace RPG
         }
 
        
-        public void appearance (string height, string weight, string hair)
-        {
-            Player appearance = new Player() { Height = height, Weight = weight, Hair = hair};
-          
-        }
       
 
     }

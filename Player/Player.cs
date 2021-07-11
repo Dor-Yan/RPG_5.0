@@ -1,23 +1,30 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
 
-//namespace RPG
-//{
-//    class Player
-//    {
-//        public string Height { get; set; }
+namespace RPG
+{
+    public class Player : WeaponService
+    {
 
-//        public string Hair { get; set; }
+        public Player()
+        {
+            Xp = new List<int>();
+        }
 
-//        public string Weight { get; set; }
 
-//        public string Name { get; set; }
+        public string Height { get; set; }
+        public string Hair { get; set; }
+        public string Weight { get; set; }
+        public string Name { get; set; }
+        public IWeapon EquipedWeapon { get; set; }
 
-//       public List<string> EquipedWeapon = new List<string>();
-//        public IWeapon EquipedWeapon { get; set; }
-//        public List<int> Xp = new List<int>();
-//    }
-//}
+        public List<int> Xp;
+        
+        
+    }
+}
+
